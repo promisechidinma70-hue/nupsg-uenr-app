@@ -1,0 +1,42 @@
+{
+  "name": "NUPS-G UENR",
+  "short_name": "NUPS-G UENR",
+  "description": "National Union of Presbyterian Students - Ghana, UENR Chapter. For to me, to live is Christ and to die is gain.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#4A148C",
+  "theme_color": "#4A148C",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": [
+    "religion",
+    "social",
+    "education"
+  ],
+  "lang": "en"
+}

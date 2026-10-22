@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1" />
+  <meta name="theme-color" content="#350068" />
+    <meta name="description" content="NUPS-G UENR – Join a wing, get updates, connect with the National Union of Presbyterian Students at UENR. For to me, to live is Christ and to die is gain." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://opens-organizing-church-endif.trycloudflare.com/" />
+  <meta property="og:title" content="NUPS-G UENR App" />
+  <meta property="og:description" content="Join a wing • Get updates • Grow together in Christ. Official NUPS-G UENR platform." />
+  <meta property="og:image" content="https://opens-organizing-church-endif.trycloudflare.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="NUPS-G UENR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NUPS-G UENR App" />
+  <meta name="twitter:description" content="Join a wing • Get updates • Grow together in Christ." />
+  <meta name="twitter:image" content="https://opens-organizing-church-endif.trycloudflare.com/og-image.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="NUPS-G UENR" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231e3a8a'/><text y='68' x='50' text-anchor='middle' font-size='36' font-weight='bold' fill='white'>N</text></svg>" />
+  <title>NUPS-G UENR – Join a Wing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ========== AUTH SCREEN ========== -->
+  <div id="auth-screen" class="auth-screen">
+    <div class="auth-card">
+      <div class="auth-header">
+        <img src="logo-transparent.png" alt="NUPS-G UENR" class="auth-logo" onerror="this.src='logo.png'" />
+        <h1>NUPS-G UENR</h1>
+        <p>For to me, to live is Christ<br>and to die is gain. — Phil 1:21</p>
+      </div>
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login">Sign In</button>
+        <button class="auth-tab" data-tab="signup">Sign Up</button>
+      </div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="login-email" placeholder="you@example.com" required autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="login-password" placeholder="••••••••" required autocomplete="current-password" />
+        </div>
+        <button type="submit" class="btn btn-primary">Sign In</button>
+      </form>
+
+      <form id="signup-form" class="hidden">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="signup-name" placeholder="Your full name" required />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="signup-email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="signup-password" placeholder="Create a password" required minlength="4" />
+        </div>
+        <div class="form-group">
+          <label>Level / Status</label>
+          <select id="signup-level">
+            <option value="">Select...</option>
+            <option value="100">Level 100</option>
+            <option value="200">Level 200</option>
+            <option value="300">Level 300</option>
+            <option value="400">Level 400</option>
+            <option value="Graduate">Graduate / Alumni</option>
+            <option value="Visitor">Visitor / Friend</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Account</button>
+      </form>
+
+      <div class="auth-footer">
+        NUPS-G! <strong>For Christ!</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MAIN APP ========== -->
+  <div id="app" class="app">
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <a href="#" class="logo" onclick="APP.navigate('home'); return false;">
+        <img src="logo-transparent.png" alt="NUPS-G UENR" class="logo-img" />
+        <div class="logo-text">
+          NUPS-G
+          <span>UENR</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle" title="Toggle theme">🌓</button>
+        <button class="icon-btn" id="logout-btn" title="Log out">⎋</button>
+      </div>
+    </header>
+
+    <!-- Pages -->
+    <main>
+      <!-- HOME / FEED -->
+      <section id="page-home" class="page active">
+        <h1 class="page-title">Hello, <span id="user-greeting">Friend</span> 👋</h1>
+        <p class="page-subtitle">Stay connected with the NUPS-G UENR family</p>
+        <div class="hero-banner">
+          <h2>NUPS-G! For Christ!</h2>
+          <p>Join a wing • Share updates • Grow together in Christ</p>
+        </div>
+
+        <div class="post-composer">
+          <textarea id="post-text" placeholder="Share an update, testimony, or announcement..."></textarea>
+          <div id="image-preview-wrap" class="hidden mt-2">
+            <img id="image-preview" style="max-width:100%;border-radius:12px;max-height:200px;object-fit:cover" alt="Preview" />
+            <button type="button" class="btn btn-sm btn-ghost" id="remove-image">Remove image</button>
+          </div>
+          <div class="composer-actions">
+            <div class="composer-tools">
+              <label class="icon-btn" style="cursor:pointer" title="Add image">
+                📷
+                <input type="file" id="post-image-input" accept="image/*" hidden />
+              </label>
+            </div>
+            <button class="btn btn-primary btn-sm" id="post-btn">Post</button>
+          </div>
+        </div>
+
+        <div id="feed"></div>
+      </section>
+
+      <!-- WINGS -->
+      <section id="page-wings" class="page">
+        <h1 class="page-title">Our Wings</h1>
+        <p class="page-subtitle">Join a wing here in the app (even if you are already on WhatsApp)</p>
+        <div class="wings-grid" id="wings-grid"></div>
+        <div class="card mt-3">
+          <div class="card-body">
+            <h3 class="font-bold mb-2">About the Wings</h3>
+            <p class="text-sm text-muted">
+              Members who are already in our WhatsApp groups are encouraged to also join their preferred wing(s) here in the app. The wings equip, train and deploy members for effective Christian service on campus and beyond. Tap any wing to join.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEARCH -->
+      <section id="page-search" class="page">
+        <h1 class="page-title">Search</h1>
+        <p class="page-subtitle">Find posts, wings & more</p>
+        <div class="search-bar">
+          <span>🔍</span>
+          <input type="search" id="search-input" placeholder="Search anything..." autocomplete="off" />
+        </div>
+        <div id="search-results"></div>
+      </section>
+
+      <!-- MESSAGES -->
+      <section id="page-messages" class="page">
+        <div id="chat-list-view">
+          <h1 class="page-title">Messages</h1>
+          <p class="page-subtitle">Connect with the community</p>
+          <div class="chat-list" id="chat-list"></div>
+        </div>
+
+        <div id="chat-view" class="chat-view">
+          <div class="flex items-center gap-2 mb-2">
+            <button class="icon-btn" onclick="APP.closeChat()">←</button>
+            <h2 class="font-bold" id="chat-title">Chat</h2>
+          </div>
+          <div class="chat-messages" id="chat-messages"></div>
+          <div class="chat-input-bar">
+            <input type="text" id="chat-input" placeholder="Type a message..." />
+            <button class="btn btn-primary btn-sm" id="chat-send">Send</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROFILE -->
+      <section id="page-profile" class="page">
+        <div class="profile-header">
+          <div class="profile-avatar" id="profile-avatar">NU</div>
+          <div class="profile-name" id="profile-name">Member</div>
+          <div class="profile-role" id="profile-level">Member</div>
+          <div class="stats-row">
+            <div class="stat">
+              <div class="stat-value" id="profile-wings-count">0</div>
+              <div class="stat-label">Wings</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value" id="profile-posts-count">0</div>
+              <div class="stat-label">Posts</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">Account</div>
+          <div class="card-body">
+            <p class="text-sm"><strong>Email:</strong> <span id="profile-email"></span></p>
+            <p class="text-sm mt-2"><strong>My Wings</strong></p>
+            <div id="profile-wings-list" class="mt-2"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">About NUPS-G UENR</div>
+          <div class="card-body">
+            <p class="text-sm text-muted">
+              National Union of Presbyterian Students – Ghana, University of Energy and Natural Resources Chapter, Sunyani.
+            </p>
+            <p class="text-sm text-muted mt-2">
+              <strong>Motto:</strong> For to me, to live is Christ and to die is gain. (Philippians 1:21)
+            </p>
+            <p class="text-sm text-muted mt-2">
+              <strong>Slogan:</strong> NUPS-G! For Christ!
+            </p>
+          </div>
+        </div>
+
+        <button class="btn btn-secondary" style="width:100%;margin-top:12px" id="logout-btn-profile" onclick="document.getElementById('logout-btn').click()">
+          Log Out
+        </button>
+      </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-page="home">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H5a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+        Home
+      </button>
+      <button class="nav-item" data-page="wings">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        Wings
+      </button>
+      <button class="nav-item" data-page="search">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        Search
+      </button>
+      <button class="nav-item" data-page="messages">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Chat
+      </button>
+      <button class="nav-item" data-page="profile">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Profile
+      </button>
+    </nav>
+  </div>
+
+  <!-- Install Banner -->
+  <div id="install-banner" class="install-banner hidden">
+    <div>
+      <strong>Install NUPS-G UENR</strong>
+      <div style="font-size:0.8rem;opacity:0.9">Add to home screen for the best experience</div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button id="install-btn">Install</button>
+      <button id="dismiss-install" style="background:transparent;color:white;border:1px solid rgba(255,255,255,0.4);padding:8px 12px;border-radius:10px;cursor:pointer">✕</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
